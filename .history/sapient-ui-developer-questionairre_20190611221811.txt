@@ -1,0 +1,69 @@
+sapient ui developer questionairre
+
+1. what is the role in the current project
+2. what is the team size
+3. What percentage of time you work on development
+4. Are you involved in the requirememt gathering
+5. Do you have Experience in architecting the front end
+6. What are the key architectural decisions that you will make while designing one
+  1. Seperation of Component & Logic
+
+7. What are the things that you will consider while architecting UI
+  1. Requirements are the key
+  2. Availability of developers & their knowledge in the team
+  3. Time & Deadlines
+  4. How many people you required
+
+8. How do you decide a framework
+  1. Developers Expertise
+  2. time line
+
+9. Are you using object oriented standards
+
+10. Prototype have you used earlier?
+
+11. Context in javascript
+12. How do you change the context of a given function
+13. Which design pattern you have used in javascript
+14. Which frameworks are you comfortable with
+15. Have you used any frontend build automation tool?
+16. What are the tasks you will look at automating while building the project
+  1. Minfication, Optimization, Browser Compatibility
+  2. bundling into single file or chunks based on project size
+  3. disabling logging for production build
+  4. 
+17. Have you familiar with automating test in javascript
+
+18. What do you understand by AMD
+  1. Asynchronous Module Definition
+
+19. What is your Experience with client side templating system
+20. Can you name some HTML 5 features ?
+  1. Audio/Video
+  2. Drag & Drop
+  3. Canvas
+  4. Application Cache / Manifest  
+  5. New form elements and attributes
+  6. Semantic Markup
+
+21. Do you know how to enable browser Compatibility of html5
+  1. polyfills & shim
+
+22. What are data attributes used for?
+23. What do you understand by web worker?
+24. Any exposure on CSS3 Preprocessor?
+25. Any css framework that you have worked on
+26. Css coding standards
+  1. 
+27. CSS Specificity
+28. What is specificity for a class selector
+29. What is the difference between resetting and normalize.css
+30. BFC - 
+31. Pseudo Elements 
+32. Any experience in to Responsive site
+33. What is your approach to implement a responsive website
+34. What is the responsive grid system
+  1. Media queries
+  2. Breakpoints
+35. Accessibility & Its different standards
+36. What is an Accessibility Standard

@@ -1,0 +1,48 @@
+'use strict';
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', function(inputStdin) {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', function() {
+    inputString = inputString.split('\n');
+
+    main();
+});
+
+function readLine() {
+    return inputString[currentLine++];
+}
+
+
+
+/*
+ * Complete the 'CountVowelsCons' function below.
+ *
+ * The function accepts STRING ip_string as parameter.
+ */
+
+function CountVowelsCons(ip_string) {
+  var vowels = 'aeiouAEIOU';
+  var vCount = 0;
+  var cCount = 0;
+  
+  for(var i = 0; i < ip_string.length; i++){
+    vowels.indexOf(ip_string[i]) > -1 ? ++vCount : ((ip_string[i].charCodeAt(0) > 64 && ip_string[i].charCodeAt(0) < 91) || (ip_string[i].charCodeAt(0) > 96 && ip_string[i].charCodeAt(0) < 123)) ? ++cCount : null;
+  }
+  
+  console.log(vCount + ' vowels and ' + cCount + ' consonants');
+}
+
+
+function main() {
+    const ip_string = readLine();
+
+    CountVowelsCons(ip_string);
+}
