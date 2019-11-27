@@ -1,0 +1,56 @@
+<!--
+Create a visual model for explaining list insertion. The model must consist of three elements:
+
+List display section: The section on the page where the list will be displayed.
+Text field: A field to provide input for inserting a new element into the list.
+Button (named "Insert"): Clicking this button inserts a new element at the end of the existing list using the value provided in the text field.
+ 
+
+Two more requirements:
+
+No element should be inserted if the text field is empty when the user clicks the button.
+Every third element in the list must be displayed in red and the remaining elements in black.
+
+-->
+<html>
+  <head>
+    <style>
+    /* Add your css styles here */
+ul li{
+    color: black;
+}
+
+ul li:nth-child(3n){
+    color: red;
+}
+    </style>
+    <script>
+// Add your javascript here
+window.addEventListener('load', onLoad);
+
+function onLoad(){
+    document.getElementById('submit').addEventListener('click', onButtonClick);
+}
+
+
+function onButtonClick(e){
+    var input = document.getElementById('input');
+    if(input.value.trim().length > 0){
+        var li = document.createElement('li');
+        li.textContent = input.value.trim();
+        document.getElementById('list').appendChild(li);
+        input.value = '';
+    }
+}
+    </script>
+  </head>
+
+  <body>
+<!-- Enter your HTML code here -->
+
+<input type="text" autocomplete="off" id="input" placeholder="Enter a value..." />
+<button id="submit">Insert</button>
+<ul id="list">
+</ul>
+  </body>
+</html>

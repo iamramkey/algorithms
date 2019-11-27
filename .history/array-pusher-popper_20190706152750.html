@@ -1,0 +1,48 @@
+<html>
+	<body>
+		<button id="pusher">Push</button>
+		<button id="popper">Pop</button>
+		<ul id="stage">
+			<li>not inited</li>
+		</ul>
+	</body>
+
+	<script>
+		function mount(el, component) {}
+		//Don't edit below this line----------------------
+		const component = {
+			data: [],
+			methods: {
+				pushAnotherNumber: function() {
+					this.data.push(Math.random());
+				},
+
+				popANumber: function() {
+					this.data.pop();
+				}
+			}
+		};
+
+		window.onload = function() {
+			const el = document.querySelector('#stage');
+			const pushbutton = document.querySelector('#pusher');
+			const popbutton = document.querySelector('#popper');
+			document.querySelector = null;
+			document.querySelectorAll = null;
+			document.getElementById = null;
+			document.getElementByName = null;
+			document.getElementByTagName = null;
+			document.getElementByClassName = null;
+
+			mount(el, component);
+
+			pushbutton.addEventListener('click', () => {
+				component.pushAnotherNumber();
+			});
+
+			popbutton.addEventListener('click', () => {
+				component.popANumber();
+			});
+		};
+	</script>
+</html>

@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<style>
+			.animated-body [class*='item-'] {
+				animation: fadeIn 0.5s forwards;
+			}
+
+			@keyframes fadeIn() {
+				0% {
+					font-size: 0px;
+				}
+				100% {
+					font-size: 20px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="shuffle()">Shuffle</button>
+		<button onclick="animatedshuffle()">Animated Shuffle</button>
+		<ul id="list"></ul>
+
+		<script>
+			function animatedshuffle() {
+				if (!(document.body.className === 'animated-body')) {
+					document.body.className = 'animated-body';
+				}
+				shuffle();
+			}
+
+			//Do not edit below this line--------------------
+
+			function shuffle() {
+				const ul = document.querySelector('#list');
+				const numchildren = ul.children.length;
+				for (let i = 0; i < numchildren; i++) {
+					ul.children[0].remove();
+				}
+
+				const randomizedlist = getRandomList();
+				randomizedlist.forEach(item => {
+					let child = document.createElement('li');
+					child.setAttribute('class', 'item-' + item);
+					child.innerHTML = item;
+					ul.appendChild(child);
+				});
+				return randomizedlist;
+			}
+
+			function getRandomList() {
+				const orderedlist = new Array(6).fill(0).map((el, i) => i + 1);
+				let randomlist = [];
+				while (randomlist.length < 6) {
+					const i = Math.floor(Math.random() * orderedlist.length);
+					randomlist = randomlist.concat(orderedlist.splice(i, 1));
+				}
+				return randomlist;
+			}
+
+			window.onload = function() {
+				window.currentlist = shuffle();
+			};
+		</script>
+	</body>
+</html>

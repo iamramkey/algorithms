@@ -69,5 +69,4 @@ sapient ui developer questionairre
 36. What is an Accessibility Standard
 
 
-Sapient First round of interview with jinto.jose@publicissapient.com
 https://jsbin.com/zumizurice/1/edit?html,css,js,output

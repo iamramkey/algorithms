@@ -1,0 +1,56 @@
+<html>
+	<body>
+		<input />
+		<button>Test</button>
+		<div id="output"></div>
+		<script>
+			function addMonths(date, months_to_add) {
+				if (typeof date === 'string') {
+					date = new Date(date);
+				}
+				if (date instanceof Date) {
+					var currentMonth = date.getMonth();
+					var rem = date.getMonth() + (months_to_add % 12);
+					var rey = Math.floor(Math.abs(months_to_add) / 12);
+					if (months_to_add < 0) {
+						rey *= -1;
+					}
+					var newDate = new Date(date);
+					newDate.setMonth(rem);
+					newDate.setYear(newDate.getFullYear() + rey);
+					return newDate;
+					//     if(months_to_add > 0 && months_to_add + currentMonth < 12){
+					//       return new Date(date.setMonth(months_to_add + currentMonth)).toString();
+					//     }else{
+
+					//     }
+				}
+			}
+
+			//Do not edit below this line -------------------
+
+			window.onload = function() {
+				const output = document.querySelector('#output');
+				const testbutton = document.querySelector('button');
+				const input = document.querySelector('input');
+				testbutton.addEventListener('click', function() {
+					const date = new Date(input.value);
+					const formatter = new Intl.DateTimeFormat('en-GB');
+					output.innerHTML = `
+      <div> + 1  month: ${formatter.format(addMonths(date, 1))} </div>
+      <div> - 1  month: ${formatter.format(addMonths(date, -1))} </div>
+      <div> + 3  month: ${formatter.format(addMonths(date, 3))} </div>
+      <div> + 23 month: ${formatter.format(addMonths(date, 23))} </div>
+      <div> - 17 month: ${formatter.format(addMonths(date, -17))} </div>
+    `;
+				});
+				document.querySelector = null;
+				document.querySelectorAll = null;
+				document.getElementById = null;
+				document.getElementByName = null;
+				document.getElementByTagName = null;
+				document.getElementByClassName = null;
+			};
+		</script>
+	</body>
+</html>

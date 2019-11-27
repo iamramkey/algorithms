@@ -1,0 +1,104 @@
+home.component.ts
+
+
+ response = {
+ 
+         data: [{
+         
+         userName: 'xyz',
+         phNo: 22344,
+         userId: 'a1234'
+         
+         },{
+         
+         userName: 'xyz',
+         phNo: 22344,
+         userId: 'a1234'
+         
+         },{
+         
+         userName: 'xyz',
+         phNo: 22344,
+         userId: 'a1234'
+         
+         },{
+         
+         userName: 'xyz',
+         phNo: 22344,
+         userId: 'a1234'
+         
+         }]
+ }
+ 
+ home.component.html
+ 
+ <search-grid [response]="response"></search-grid>
+ 
+ searchgrid.component.ts
+ 
+ @Input() response;
+ 
+ 
+ searchgrid.component.html 
+ <table>
+ <thead>
+ <tr>
+ <th>UserName</th>
+ <th>PHone NUmber </th>
+ <th>User Id </th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr *ngFor="let user of response?.data">
+ <td>{{ user?.userName }}</td>
+ <td>{{ user?.phNo }}</td>
+ <td>{{ user?.userId }}</td>
+ </tr>
+ </tbody>
+ </table>
+ 
+ 
+ function Universal(){
+     if(Universal.instance){
+         return Universal.instance
+     }else{
+         Universal.instance = this;
+         return this;
+     }     
+ }
+ 
+ var x = [12,15,23,24,12,15,12,24] = 4
+ 
+ x.filter((e,i) => x.indexOf(e) === i).length
+ 
+ var x = {
+     a : 1,
+     b : 2,
+     c : 3,
+     d : 4
+ };
+ 
+ var [a,b] = x;
+ 
+ function (){
+     var _this = this;
+     
+     _this.x = 10;
+ }
+ 
+ 
+ 
+var x = {
+    vehicle: 'Truck',
+    
+}
+
+
+window.addEventListener('load', onLoad);
+ 
+
+ 
+ var x = new Universal();
+ var y = new Universal();
+ 
+ 

@@ -1,0 +1,65 @@
+<html>
+<body>
+  <div style="display: flex;">
+    <div>
+      <div id="dashboard">Car speed: x km/hr</div>
+      <button id="acclbutton">Accelerate</button>
+      <button id="brakebutton">Brake</button>
+    </div>
+    <div style="margin-left: 50px;">
+      <div>Aiden's phone</div>
+      <input id="hackinput">
+    </div>
+  </div>
+
+<script>
+function Car() {
+  const dashboard = document.querySelector("#dashboard")
+  this.cardash = new Proxy({}, {
+    set(obj, prop, value) {
+      if (prop == "speed") {
+        obj[prop] = value
+        dashboard.innerHTML = `Car speed: ${value} km/hr`
+      }
+    }
+  })
+  this.cardash.speed = 0
+
+  const acclbutton = document.querySelector("#acclbutton")
+  acclbutton.addEventListener('click', this.accelerate.bind(this))
+  const brakebutton = document.querySelector("#brakebutton")
+  brakebutton.addEventListener('click', this.decelerate.bind(this))
+}
+
+Car.prototype.accelerate = function() {
+  this.cardash.speed = parseFloat(this.cardash.speed) + 1;
+}
+
+Car.prototype.decelerate = function() {
+  this.cardash.speed = (this.cardash.speed > 0)?this.cardash.speed-1:0;
+}
+
+//Do not edit below this line---------------------------
+window.onload = () => {
+  const hackinput = document.querySelector("#hackinput")
+  hackinput.addEventListener('change', function(event) {
+    try {
+      car.cardash.speed = event.target.value
+    } catch(e) {
+      alert('Hack failed!')
+    }
+  })
+  const car = new Car();
+
+  document.querySelector = null
+  document.querySelectorAll = null
+  document.getElementById = null
+  document.getElementByName = null
+  document.getElementByTagName = null
+  document.getElementByClassName = null
+}
+
+</script>
+
+</body>
+</html>
